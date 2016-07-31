@@ -12,7 +12,7 @@ $mysqli -> set_charset('utf8');
 
 //3.执行SQL查询
 $sql=<<<Eof
-CREATE TABLE mysqli(
+CREATE TABLE IF NOT EXISTS mysqli(
 id TINYINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 username VARCHAR(20) NOT NULL
 )CHARSET UTF8;
@@ -24,6 +24,9 @@ debug($res,false,true);
  * SELECT/DESC/DESCRIBE/SHOW/EXPLAIN返回的是result对象，执行失败返回FALSE
  对于其它SQL语句成功返回TRUE 失败返回FALSE
  */
+
+
+
 
  //关闭连接 
  $mysqli -> close();
